@@ -1,0 +1,11 @@
+<!-- Добавьте кнопки для сортировки по цене и алфавиту -->
+<a href="{% url 'guitar_list' %}?sort=price">Сортировать по цене</a>
+<a href="{% url 'guitar_list' %}?sort=name">Сортировать по имени</a>
+
+<!-- Выведите список гитар в соответствии с выбранной сортировкой -->
+{% if request.GET.sort == 'price' %} {% for guitar in guitars_by_price %}
+<!-- Отображение информации о гитаре -->
+{% endfor %} {% elif request.GET.sort == 'name' %} {% for guitar in
+guitars_by_name %}
+<!-- Отображение информации о гитаре -->
+{% endfor %} {% endif %}
